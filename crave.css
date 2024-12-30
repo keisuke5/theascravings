@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    src: url(fontsomori/OMORI_GAME2.ttf);
+    font-family: OMORI_GAME2;
+}
+
+body {
+    background-image: url(imagesomori/good1.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 400px;
+    margin-top: 100px;
+    background-color:#f3d4ff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffc4fd;
+    padding: 1.3rem 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+.logopics {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logopics p{
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-family: OMORI_GAME2;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 1.5vw, 3rem);
+    display: inline;
+}
+
+#texthead1 a{
+    text-decoration: none;
+}
+
+#texthead {
+    display: none;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgb(255, 255, 255), transparent);
+    transition: .2s;
+}
+
+.header:hover:after {
+    left: 100%;
+}
+
+.logo img {
+    width: 45px;
+}
+
+.navbar a {
+    font-size: clamp(1.5rem, 1.5vw, 3rem);
+    color: #fff;
+    text-decoration: none;
+    font-family: OMORI_GAME2;
+    font-weight: 1000;
+    margin-left: 2.5rem;
+}
+
+.navbar a:hover {
+    color: #ffcfef;
+    transition: .3s ease;
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    font-size: 2.7rem;
+    color: #fff;
+    cursor: pointer;
+    right: 1%;
+    display: none;
+    position: absolute;
+}
+
+/*responsive*/
+@media (max-width: 815px) {
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #ffc4fd;
+        border: 2px dashed #fff;
+        transition: .4s ease;
+        overflow: hidden;
+    }
+
+    #check:checked~.navbar {
+        height: 14rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: clamp(1.5rem, 1.5vw, 3rem);
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .bordercute img {
+        width: 320px !important;
+        margin: 10px 0px;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .text3 p {
+        width: 170px !important;
+        position: absolute;
+        left: 25px !important;
+        top: 60px !important;
+        font-family: OMORI_GAME2;
+        font-size: clamp(0.9rem, 0.7vw, 2rem) !important;
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+@media (max-width: 390px) {
+    .logopics p {
+        display: none;
+    }
+
+    #texthead {
+        display: inline;
+    }
+}
+
+/*main content*/
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 100px 100px 100px;
+    border-radius: 20px;
+}
+.column{
+    flex: 25%;
+    max-width: 25%;
+    background-image: url(imagesomori/trythisout.gif);
+}
+.img-hover-zoom{
+    height: auto;
+    overflow: hidden;
+    border: 5px solid #ffc2fc;
+    border-radius: 3px;
+}
+.img-hover-zoom img{
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition:  transform .5s ease;
+}
+.img-hover-zoom:hover img{
+    transform: scale(1.5);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.bordercute {
+    position: relative;
+}
+
+.bordercute img {
+    width: 500px;
+    margin: 10px 0px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.text3 p{
+    width: 260px;
+    position: absolute;
+    left: 55px;
+    top: 100px;
+    font-family: OMORI_GAME2;
+    font-size: clamp(1.3rem, 1vw, 2.5rem);
+    font-weight: 600;
+    text-align: justify;
+}
+
+#cotext1 {
+    color: #fb6f92;
+}
+
+#cotext2 {
+    color: #589ac4;
+}
+
+@media screen and (max-width: 800px) {
+    .column{
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 520px) {
+    .row {
+        padding: 0px 20px 20px 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
